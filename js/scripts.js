@@ -1,101 +1,97 @@
-let randomNumber = Math.floor(Math.random() * 10)
-console.log( 'numberRandom', randomNumber)
+let randomNumber = Math.floor(Math.random() * 100)
+console.log('numberRandom', randomNumber)
 let numberOfGuesses = 10
-let guessHistory = []
-let guessHistoryBig = [[],' ' ,' ', ' ' ]
+var guessHistory = []
+var fourRoundGuessHistory = ['','','']
 
 
-
-function resultLastRound(){
-writeGuessHistory()
-
-}
-  
-
-function writeGuessHistory(guess) {
-    guessHistory.push(guess)
-    let listOfUserGuesses = ''
-    guessHistory.map((guess) => {
-        listOfUserGuesses =  `${guess}, ${listOfUserGuesses}`
-    })
-    document.getElementById('guessHistory').innerHTML = guessHistory
-    
+// create a array of input data
+function writeGuessHistory(inputGuessdata,arrayHistory) {
+   arrayHistory.push(inputGuessdata)
+    console.log('something' ,arrayHistory)
+    console.log('typeof arrayHistory', typeof arrayHistory)
+    return arrayHistory
 
 }
-
-function promptUserAccording(buttonClass, promptDialogue) {
-    document.getElementById('userPrompt').style.visibility = 'visible'
-    document.getElementById("userPrompt").className = buttonClass;
-    document.getElementById("userPrompt").innerHTML = promptDialogue
-}
-
+console.log('result data array', guessHistory)
+// create the userGuess main function
 function userGuess() {
-    
+   
+
     const numberGuessed = parseInt(document.getElementById('guess').value)
-   
-    if (numberGuessed > 100 || numberGuessed < 0 ){
-        promptUserAccording("alert-danger", `Your guess of ${numberGuessed} must between 1~100`)   
-        return 
-    }
-    if (numberOfGuesses === 0) {
-        promptUserAccording("alert-warning", `Out of Guesses`)
+
+    console.log('dataInput', numberGuessed)
+    document.getElementById('numberOfRemainingGuesses').innerHTML = numberOfGuesses
+    document.getElementById("guess").value = ''
+        if(numberOfGuesses === 0){
+        document.getElementById('alert-part').style.visibility = 'visible'
+        document.getElementById("alert-part").className = ' alert alert-warning'
+        document.getElementById('alert-part').innerHTML = "Out Of Guess "
         return
-    }  
-    if (numberGuessed === randomNumber) {
-        promptUserAccording("alert-success", `Your guess of ${numberGuessed} was correct!`)
-        guessHistoryBig.unshift(guessHistory)
-        console.log(guessHistory)
-        console.log(guessHistoryBig)
-        document.getElementById('historyGuess1').innerHTML =   guessHistoryBig[0].join(',')
-        // document.getElementById('historyGuess2').innerHTML = "II" +  guessHistoryBig[1]
-        // document.getElementById('historyGuess3').innerHTML = "III" +  guessHistoryBig[2]
-        // document.getElementById('historyGuess4').innerHTML = "IV"  + guessHistoryBig[3]
-        return 
-    } else if (numberGuessed > randomNumber) {
-        promptUserAccording("alert-danger", `Your guess of ${numberGuessed} was wrong! It's too high...`)
-    } else if (numberGuessed < randomNumber) {
-        promptUserAccording("alert-danger", `Your guess of ${numberGuessed} was wrong! It's too low...`)
-        
-    }
-if (guessHistory.includes(numberGuessed)){
-    promptUserAccording("alert-danger", `Your guess of ${numberGuessed} was duplice`)
-    return
-}
-
-
-    writeGuessHistory(numberGuessed)
+        }
+        if (numberGuessed > 100 || numberGuessed < 0) {
+            document.getElementById('alert-part').style.visibility = 'visible'
+            document.getElementById("alert-part").className = ' alert alert-warning'
+            document.getElementById('alert-part').innerHTML = "Please input between 0~100"                    
+            return
+        }
+        if (guessHistory.includes(numberGuessed)) {
+            document.getElementById('alert-part').innerHTML = "Your GUESS WAS DUPLICA "
+            document.getElementById('alert-part').style.visibility = 'visible'
+            document.getElementById("alert-part").className = ' alert alert-danger'
+            guessHistory
+            return
+        }
+    writeGuessHistory(numberGuessed,guessHistory)
+    console.log('resultInputArray', guessHistory)
     numberOfGuesses -= 1
-    document.getElementById('numberOfRemainingGuesses').innerHTML = numberOfGuesses
-    document.getElementById("guess").value = ''
- 
    
-}
+    
+//If inputData **** randomNumber
 
+// some problem here, noted to find help ( line 53 to 57)
+// Try to put the array 'guessHistory' to the bigger array " fourRoundGuessHistory", but not work, the document for guessResultR1-R2 also not work for not know reason.
+        if (numberGuessed === randomNumber) {
+            let fourRoundGuessHistory = []
+             fourRoundGuessHistory.unshift(guessHistory)
+             console.log('tong cong', fourRoundGuessHistory)
+            document.getElementById('guessResultR1').innerHTLM = "RESULT ROUND 1" 
+            document.getElementById('guessResultR2').innerHTLM = "RESULT ROUND 2" 
+            document.getElementById('guessResultR3').innerHTLM = "RESULT ROUND 3" 
+            document.getElementById('guessResultR4').innerHTLM = "RESULT ROUND 4" 
+            document.getElementById('alert-part').innerHTML = "YOUR GUESS WAS CORRECT "
+           
+            document.getElementById("alert-part").className = ' alert alert-success'
+            // document.getElementById('bestscore').innerHTML = "Your best" + bestscore
+           
+         
+            resetGame()
+            return
+            
+        } else if (numberGuessed > randomNumber) {
+            document.getElementById('alert-part').innerHTML = "YOUR GUESS WAS TOO HIGH "
+            document.getElementById('alert-part').style.visibility = 'visible'
+            document.getElementById("alert-part").className = ' alert alert-danger'
+           
+        } else if (numberGuessed < randomNumber) {
+            document.getElementById('alert-part').innerHTML = "YOUR GUESS WAS TOO LOW "
+            document.getElementById('alert-part').style.visibility = 'visible'
+            document.getElementById("alert-part").className = ' alert alert-danger'
+    
+        }
+   return guessHistory
+
+    }
+  console.log('test guy', userGuess())
 function resetGame() {
+    
+   
     numberOfGuesses = 10
-    document.getElementById('userPrompt').style.visibility = 'hidden'
+    guessHistory = []
+    console.log(guessHistory)
     document.getElementById('numberOfRemainingGuesses').innerHTML = numberOfGuesses
     document.getElementById("guess").value = ''
-    document.getElementById('guessHistory').innerHTML = ''
+    // document.getElementById('').innerHTML = ''
+
 }
 
-// let timeHistory = []
-
-// let time = 0
-// function timeGuesses() {    
-//   // setInterval(/* code */, 1000)
-//   setInterval(() => {
-//     time += 1
-//     document.getElementById('guessRoundTime').innerHTML = time
-//   }, 1000)
-  
-// }
-
-// function resetTimer() {
-//   timeHistory.push(time)
-//   console.log('TimeHistory', timeHistory)
-//   time = 0
-// }
-
-
-// timeGuesses()

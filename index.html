@@ -1,52 +1,61 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
 
-  <title>The HTML5 Herald</title>
+  <title>GUESSING NUMBER GAME</title>
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
   <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
 </head>
 
-<body class = "column">
+<body class="column">
 
-  <div class="container col-md-4">
-    <div>
-<h1>Guessing Number Game</h1>
-      
+  <div class="container col-md-8">
+    <div class = 'd-flex justify-content-center'>
+      <h1>GUESSING NUMBER GAME</h1>
+
     </div>
-    <div>
-    <h1 class = "center">Number of Guesses</h1>
-    <button id="numberOfRemainingGuesses" class ="font-weight-bold text-uppercase align-item-center col-sm-2" >10</p></button>
+    <div class="d-flex justify-content-center row-sm-3">
+      <h2 class="lg">Number of Guesses</h2>
+      <button id="numberOfRemainingGuesses" class=" btn  btn-lg middle font-weight-bold text-uppercase align-item-center col-sm-2">10</p>
+        </button>
+
+    </div>
     
+      
+    <div class="d-flex justify-content-center column">
+    <input class="input-group-text" id="inputGroup-sizing-sm guess" type="text"  />
+    <button class="btn btn-outline-primary"  type="button" onclick="userGuess()">Guess Number!</button>
   </div>
-  <input type="text" id="guess"/>
-    <button type="button" onclick="userGuess()">Guess Number!</button>
-    <div id="userPrompt" class="alert alert-primary" role="alert" style="visibility: hidden">
-      Success!
+    <div id="alert-part" class="alert alert-primary row" role="alert" style="visibility: hidden">
+      asd
     </div>
-    <div id="guessHistory" style="background-color: pink; height: 100px; width: 300px;">
-
+    <div id="" class="alert alert-primary row" role="alert" >
+      Result round 1:       <p id=guessResultR1> here</p>
     </div>
-    <div id="guessHistory1" style="background-color: pink; height: 100px; width: 300px;">
+    <div id="" class="alert alert-primary row" role="alert" >
+      Result round 2:       <p id=guessResultR2> here</p>
+    </div>
+    <div id="" class="alert alert-primary row" role="alert" >
+      Result round 3:       <p id=guessResultR3> here</p>
+    </div>
+    <div id="" class="alert alert-primary row" role="alert" >
+      Result round 4:       <p id=guessResultR4> here</p>
+    </div>
+    <div id="" class="alert alert-primary row" role="alert" >
+      Best score:       <p id=bestscore> here</p>
+    </div>
 
-      </div>
-      <div id="guessHistory2" style="background-color: red; height: 100px; width: 300px;">
-
-        </div>
-        <div id="guessHistory3" style="background-color: red; height: 100px; width: 300px;">
-
-          </div>
-          <div id="guessHistory4" style="background-color: red; height: 100px; width: 300px;">
-
-            </div>
     <button type="button" onclick="resetGame()">Start Over</button>
   </div>
   <script src="js/scripts.js"></script>
 </body>
+
 </html>
