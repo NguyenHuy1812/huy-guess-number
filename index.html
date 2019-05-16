@@ -13,18 +13,38 @@
   <!-- <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
 </head>
 
-<body>
-  <div class="container">
-    <h1>Number of Guesses</h1>
-    <p id="numberOfRemainingGuesses">3</p>
-    <input type="text" id="guess"/>
+<body class = "column">
+
+  <div class="container col-md-4">
+    <div>
+<h1>Guessing Number Game</h1>
+      
+    </div>
+    <div>
+    <h1 class = "center">Number of Guesses</h1>
+    <button id="numberOfRemainingGuesses" class ="font-weight-bold text-uppercase align-item-center col-sm-2" >10</p></button>
+    
+  </div>
+  <input type="text" id="guess"/>
     <button type="button" onclick="userGuess()">Guess Number!</button>
     <div id="userPrompt" class="alert alert-primary" role="alert" style="visibility: hidden">
       Success!
     </div>
-    <div id="guessHistory" style="background-color: pink; height: 100px; width: 100px">
+    <div id="guessHistory" style="background-color: pink; height: 100px; width: 300px;">
 
     </div>
+    <div id="guessHistory1" style="background-color: pink; height: 100px; width: 300px;">
+
+      </div>
+      <div id="guessHistory2" style="background-color: red; height: 100px; width: 300px;">
+
+        </div>
+        <div id="guessHistory3" style="background-color: red; height: 100px; width: 300px;">
+
+          </div>
+          <div id="guessHistory4" style="background-color: red; height: 100px; width: 300px;">
+
+            </div>
     <button type="button" onclick="resetGame()">Start Over</button>
   </div>
   <script src="js/scripts.js"></script>
