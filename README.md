@@ -1,4 +1,4 @@
-# CoderSchool FTW - * Name of Your Project Here *
+# CoderSchool FTW - * Guessing Number Game *
 
 Created with love by: `Nguyen Kieu Huy`
   
