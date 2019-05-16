@@ -4,7 +4,7 @@ Created with love by: `Nguyen Kieu Huy`
   
 View online at: `https://vigorous-mccarthy-df005f.netlify.com/`
   
-This is a Solo Project that required to to create a simple guess the number type game. It should choose a random number between 1 and 100, then challenge the player to guess the number in 10 turns.
+This is a Solo Project that required to create a simple guess the number type game. It should choose a random number between 1 and 100, then challenge the player to guess the number in 10 turns.
 
 
 ## Video Walkthrough
