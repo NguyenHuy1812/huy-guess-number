@@ -1,20 +1,16 @@
 # CoderSchool FTW - * Name of Your Project Here *
 
-Created with love by: `Your Name Here`
+Created with love by: `Nguyen Kieu Huy`
   
 View online at: `Your URL here`
   
-One or two sentence summary of your project. 
+This is a Solo Project that required to to create a simple guess the number type game. It should choose a random number between 1 and 100, then challenge the player to guess the number in 10 turns.
+
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories.
 
-To create a GIF, use [LiceCap](http://www.cockos.com/licecap/), [RecordIt](http://www.recordit.co), or [Loom](http://www.useloom.com), and link the image here in the markdown.
-
-```
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-```
 
 ## User Stories
 
@@ -38,13 +34,14 @@ The following **optional** features are implemented:
 
 ## Time Spent and Lessons Learned
 
-Time spent: **X** hours spent in total.
+Time spent: 12++ hours spent in total.
 
-Describe any challenges encountered while building the app.
+This look like the first time I coming to create something with Javascript, hard to define Function - call Function and really hard to create the variable name that look useful.
+Try my best and keep moving on this project in future.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [0001] [Nguyen Kieu Huy]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
